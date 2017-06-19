@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyWishes</string>
+    <string name="textview_title">My Wish List</string>
+    <string name="edittext_hint1">Enter Wish title ...</string>
+    <string name="edittext_hint2">Enter Wish description ...</string>
+    <string name="button_submit">Submit</string>
+</resources>
