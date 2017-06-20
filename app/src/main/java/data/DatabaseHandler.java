@@ -75,6 +75,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.insert(Constants.TABLE_NAME, null, values);
 
+        Log.v("Wish successfully!", "yeah!!");
+
         db.close();
 
 
