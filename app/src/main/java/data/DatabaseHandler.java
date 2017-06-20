@@ -74,9 +74,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
         db.insert(Constants.TABLE_NAME, null, values);
-        //db.insert(Constants.TABLE_NAME, null, values);
-
-        // Log.v("Wish successfully!", "yeah!!");
 
         db.close();
 
@@ -106,9 +103,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 //                wish.setItemId(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ID)));
 
                 java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
-                String dataData = dateFormat.format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.DATE_NAME))).getTime());
+                String dateData = dateFormat.format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.DATE_NAME))).getTime());
 
-                wish.setRecordDate(dataData);
+                wish.setRecordDate(dateData);
 
                 wishList.add(wish);
 
