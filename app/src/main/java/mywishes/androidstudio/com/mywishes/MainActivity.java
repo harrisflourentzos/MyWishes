@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, WishList.class);
+                Intent i = new Intent(MainActivity.this, WishViewer.class);
                 startActivity(i);
             }
         });
