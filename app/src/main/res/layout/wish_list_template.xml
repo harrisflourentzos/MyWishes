@@ -13,13 +13,13 @@
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        app:srcCompat="@drawable/wishimage"
+        android:background="@drawable/note"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/wishViewerTitleId"
+        android:id="@+id/wishListTemplateTitleId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageViewId"
@@ -30,15 +30,15 @@
         android:text="Title" />
 
     <TextView
-        android:id="@+id/wishViewerDateId"
+        android:id="@+id/wishListTemplateDateId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/wishViewerTitleId"
+        android:layout_below="@+id/wishListTemplateTitleId"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:textStyle="italic"
-        android:layout_alignLeft="@+id/wishViewerTitleId"
-        android:layout_alignStart="@+id/wishViewerTitleId"
+        android:layout_alignLeft="@+id/wishListTemplateTitleId"
+        android:layout_alignStart="@+id/wishListTemplateTitleId"
         android:text="Date" />
 
 </RelativeLayout>

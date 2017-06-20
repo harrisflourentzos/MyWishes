@@ -56,8 +56,8 @@ public class MainActivity extends Activity {
         title.setText("");
         content.setText("");
 
-//        Intent i = new Intent(MainActivity.this, WishList.class);
-//        startActivity(i);
+        Intent i = new Intent(MainActivity.this, WishList.class);
+        startActivity(i);
 
 
 
