@@ -1,6 +1,7 @@
 package mywishes.androidstudio.com.mywishes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,7 +47,7 @@ public class WishList extends Activity {
             String title = wishesFromDB.get(i).getTitle();
             String dateText = wishesFromDB.get(i).getRecordDate();
             String content = wishesFromDB.get(i).getContent();
-//            int mid = wishesFromDB.get(i).getItemId();
+            int mid = wishesFromDB.get(i).getItemId();
 
 
 //            Log.v("IDs: " , String.valueOf(mid));
@@ -55,7 +56,7 @@ public class WishList extends Activity {
             myWish.setTitle(title);
             myWish.setContent(content);
             myWish.setRecordDate(dateText);
-//            myWish.setItemId(mid);
+            myWish.setItemId(mid);
 
 
             dbWishes.add(myWish);
@@ -139,6 +140,26 @@ public class WishList extends Activity {
             holder.mTitle.setText(holder.myWish.getTitle());
             holder.mDate.setText(holder.myWish.getRecordDate());
 
+            final ViewHolder finalHolder = holder;
+            holder.mTitle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String text = finalHolder.myWish.getContent().toString();
+                    String dateText = finalHolder.myWish.getRecordDate().toString();
+                    String title = finalHolder.myWish.getTitle().toString();
+                    int mid = finalHolder.myWish.getItemId();
+
+
+                    Intent i = new Intent(WishList.this, WishViewer.class);
+                    i.putExtra("content", text);
+                    i.putExtra("title", title);
+                    i.putExtra("date", dateText);
+                    i.putExtra("id", mid);
+
+                    startActivity(i);
+                }
+            });
+
             return row;
         }
     }
@@ -148,7 +169,7 @@ public class WishList extends Activity {
         Wish myWish;
         TextView mTitle;
         TextView mDate;
-//        int mId;
+        int mId;
 //        TextView mContent;
 
 

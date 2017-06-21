@@ -9,6 +9,15 @@ public class Wish {
     public String title;
     public String content;
     public String recordDate;
+    public int itemId;
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
 
     public String getTitle() {
         return title;

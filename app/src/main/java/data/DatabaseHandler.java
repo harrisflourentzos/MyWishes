@@ -50,18 +50,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-
-    //delete a wish
-    public void deleteWish(int id) {
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(Constants.TABLE_NAME, Constants.KEY_ID + " = ? ",
-                new String[]{ String.valueOf(id)});
-
-        db.close();
-
-    }
-
     //add content to table
     public void addWishes(Wish wish) {
 
@@ -79,6 +67,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.close();
 
+
+    }
+
+    //Delete a wish
+    public void deleteWish(int id){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Constants.TABLE_NAME, Constants.KEY_ID + " = ? ", new String[]{ String.valueOf(id)});
+        db.close();
 
     }
 
@@ -102,7 +99,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 Wish wish = new Wish();
                 wish.setTitle(cursor.getString(cursor.getColumnIndex(Constants.TITLE_NAME)));
                 wish.setContent(cursor.getString(cursor.getColumnIndex(Constants.CONTENT_NAME)));
-//                wish.setItemId(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ID)));
+                wish.setItemId(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ID)));
 
                 java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
                 String dateData = dateFormat.format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.DATE_NAME))).getTime());
